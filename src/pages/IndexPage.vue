@@ -1,21 +1,19 @@
 <template>
-  <q-page class="page">
+  <q-page class="page flex flex-center">
 
-    <div class="row full-height">
+    <div class="row q-col-gutter-md items-stretch justify-center full-width container">
 
-      <!-- Left Side -->
-      <div class="col-12 col-md-6 left">
+      <!-- Left Side: Login Card -->
+      <div class="col-12 col-sm-6 col-md-5 flex">
+        <q-card class="my-card shadow-10 full-width flex flex-center column">
 
-        <q-card class="card">
-
-          <q-card-section>
-            <div class="text-h5 text-center text-primary">
+          <q-card-section class="full-width">
+            <div class="text-h5 text-center text-primary text-bold">
               Login
             </div>
           </q-card-section>
 
-          <q-card-section>
-
+          <q-card-section class="full-width q-pt-none">
             <q-input
               outlined
               label="Username"
@@ -33,23 +31,29 @@
               label="Submit"
               color="primary"
               class="button"
+              unelevated
             />
-
           </q-card-section>
 
         </q-card>
-
       </div>
 
 
-      <!-- Right Side -->
-      <div class="col-12 col-md-6 right">
+      <!-- Right Side: Mouse Image Card -->
+      <div class="col-12 col-sm-6 col-md-5 flex">
+        <q-card class="my-card shadow-10 full-width overflow-hidden">
 
-        <q-img
-          src="https://images.unsplash.com/photo-1497366754035-f200968a6e72"
-          class="image"
-        />
+          <q-img
+            src="https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?q=80&w=1000&auto=format&fit=crop"
+            class="image full-height"
+            spinner-color="primary"
+          >
+            <div class="absolute-bottom text-subtitle2 text-center">
+              Computer Mouse
+            </div>
+          </q-img>
 
+        </q-card>
       </div>
 
     </div>
@@ -59,23 +63,17 @@
 
 <style scoped>
 .page {
-  height: 100vh;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
 }
 
-.left {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
+.container {
+  max-width: 900px;
 }
 
-.right {
-  height: 100%;
-}
-
-.card {
-  width: 400px;
-  max-width: 100%;
+.my-card {
+  border-radius: 12px;
 }
 
 .input {
@@ -84,9 +82,11 @@
 
 .button {
   width: 100%;
+  padding: 10px 0;
 }
 
 .image {
-  height: 100%;
+  min-height: 280px;
+  object-fit: cover;
 }
 </style>
